@@ -2,15 +2,15 @@
 pragma solidity ^0.8.14;
 
 import "forge-std/Test.sol";
-import "./ERC20Mintable.sol";
-import "./UniswapV3Pool.Utils.t.sol";
+import "./util/ERC20Mintable.sol";
+import "./util/UniswapV3Pool.Utils.t.sol";
 
 import "../src/interfaces/IUniswapV3Pool.sol";
 import "../src/lib/LiquidityMath.sol";
 import "../src/lib/TickMath.sol";
 import "../src/UniswapV3Factory.sol";
 import "../src/UniswapV3Pool.sol";
-// forge test --match-path ./test/UniswapV3Pool.all.t.sol --match-contract UniswapV3PoolAllTest --match-test "test*" -vv
+// forge test --match-path ./test/LearningUniswapV3.t.sol --match-contract LearningUniswapV3 --match-test "test*" -vv
 /*
     共8个test方法， 5个mint 3个swap
     testPool_MintInRange()  当前价格 5000， 在一个区间[4545,5500]添加流动性
@@ -23,7 +23,7 @@ import "../src/UniswapV3Pool.sol";
     testSwap_BuyETHConsecutivePriceRanges() 当前价格 5000， 在两个区间[4545,5500]，[5500,6250]添加流动性。然后用10000U交易
 
 */
-contract UniswapV3PoolAllTest is Test, UniswapV3PoolUtils {
+contract LearningUniswapV3 is Test, UniswapV3PoolUtils {
     ERC20Mintable weth;
     ERC20Mintable usdc;
     UniswapV3Factory factory;

@@ -4,7 +4,7 @@ solc_version = "0.8.14"
 # optimizer_runs = 200
 src = 'src'
 out = 'out'
-ETH_RPC_URL= "http://localhost:8545"
+
 PRIVATE_KEY= ""
 RUST_LOG="backend,api anvil"
 RUST_BACKTRACE="full"
